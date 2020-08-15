@@ -1,12 +1,12 @@
-const monggose = require("mongoose");
+const mongoose = require("mongoose");
 
 // Connect to MongoDB
-monggose.connect("mongodb://localhost/test_database");
+mongoose.connect('mongodb://localhost/test_database');
 
-monggose.connection
-  .once("open", () => {
-    console.log("Connection Successful");
-  })
-  .on("error", (err) => {
-    console.log("Connection Error;", err);
-  });
+mongoose.connection.once('open', function() {
+  console.log("Connection Successfull");
+}).on('error', function(error) {
+  console.log("Connection Error: ", error);
+});
+
+
